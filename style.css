@@ -1,0 +1,539 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Cool infinite background scrolling animation.
+ * Twitter: @kootoopas
+ */
+/* Exo thin font from Google. */
+@import url(https://fonts.googleapis.com/css?family=Exo:100);
+/* Background data (Original source: https://subtlepatterns.com/grid-me/) */
+/* Animations */
+@-webkit-keyframes bg-scrolling-reverse {
+  100% {
+    background-position: 50px 50px;
+  }
+}
+@-moz-keyframes bg-scrolling-reverse {
+  100% {
+    background-position: 50px 50px;
+  }
+}
+@-o-keyframes bg-scrolling-reverse {
+  100% {
+    background-position: 50px 50px;
+  }
+}
+@keyframes bg-scrolling-reverse {
+  100% {
+    background-position: 50px 50px;
+  }
+}
+@-webkit-keyframes bg-scrolling {
+  0% {
+    background-position: 50px 50px;
+  }
+}
+@-moz-keyframes bg-scrolling {
+  0% {
+    background-position: 50px 50px;
+  }
+}
+@-o-keyframes bg-scrolling {
+  0% {
+    background-position: 50px 50px;
+  }
+}
+@keyframes bg-scrolling {
+  0% {
+    background-position: 50px 50px;
+  }
+}
+/* Main styles */
+body {
+  margin-top: 13.5rem;
+  color: #999;
+  font: 400 16px/1.5 exo, ubuntu, "segoe ui", helvetica, arial, sans-serif;
+  text-align: center;
+  /* img size is 50x50 */
+  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAIAAACRXR/mAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAAABnSURBVHja7M5RDYAwDEXRDgmvEocnlrQS2SwUFST9uEfBGWs9c97nbGtDcquqiKhOImLs/UpuzVzWEi1atGjRokWLFi1atGjRokWLFi1atGjRokWLFi1af7Ukz8xWp8z8AAAA//8DAJ4LoEAAlL1nAAAAAElFTkSuQmCC") repeat 0 0;
+  -webkit-animation: bg-scrolling-reverse 0.92s infinite;
+  /* Safari 4+ */
+  -moz-animation: bg-scrolling-reverse 0.92s infinite;
+  /* Fx 5+ */
+  -o-animation: bg-scrolling-reverse 0.92s infinite;
+  /* Opera 12+ */
+  animation: bg-scrolling-reverse 0.92s infinite;
+  /* IE 10+ */
+  -webkit-animation-timing-function: linear;
+  -moz-animation-timing-function: linear;
+  -o-animation-timing-function: linear;
+  animation-timing-function: linear;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 0;
+  background: rgba(255, 255, 255, 0.2); /* Transparence */
+  backdrop-filter: blur(10px); /* Flou pour l'effet de verre */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ombre subtile */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  z-index: 1000;
+  text-align: center;
+}
+
+header h1 {
+  font-family: 'Space Mono', monospace;
+  color: #4a90e2; /* Couleur principale bleue */
+}
+
+header p {
+  font-size: 18px;
+  color: #333; /* Texte légèrement plus foncé pour contraste */
+}
+
+.profile-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+#profile-pic {
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border: 4px solid #4a90e2;
+  margin-bottom: 20px;
+}
+
+.bio {
+  text-align: center;
+  padding: 20px;
+  margin: 10px;
+  max-width: 600px;
+  color: #444;
+  background-color: #fff;
+  border-top: 4px solid #4a90e2;
+  line-height: 1.6;
+  font-size: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease;
+  line-height: 1.6;
+}
+
+
+.interests-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 10px;
+  width: 300px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  border-top: 4px solid #4a90e2;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+.card h2 {
+  color: #ff6f61; /* Couleur orange vive */
+  margin-bottom: 10px;
+}
+
+.card p {
+  color: #444;
+  line-height: 1.6;
+}
+
+footer {
+  text-align: center;
+  margin-top: 40px;
+}
+
+footer h3 {
+  color: #4a90e2;
+  margin-bottom: 10px;
+}
+
+ul {
+  list-style: none;
+}
+
+ul li {
+  margin-bottom: 10px;
+}
+
+a {
+  color: #ff6f61;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Styles généraux pour tous les jeux */
+.game-container {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+/* Titre de chaque jeu */
+.game-title {
+  font-size: 32px;
+  color: #4a90e2;
+  margin-bottom: 20px;
+}
+
+/* Instructions des jeux */
+.game-instructions {
+  font-size: 18px;
+  color: #555;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+/* Boutons des jeux */
+.game-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.game-button {
+  background-color: #4a90e2;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+  margin-top: 10px;
+}
+
+.start-button {
+  background-color: #4a90e2;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+  margin-top: 10px;
+}
+
+.game-button:hover {
+  background-color: #ff6f61;
+}
+
+.start-button:hover {
+  background-color: #ff6f61;
+}
+
+/* Section des jeux individuels */
+#colorDisplay {
+  width: 150px;
+  height: 150px;
+  margin: 20px auto;
+  background-color: white;
+  border: 2px solid #4a90e2;
+  border-radius: 10px;
+}
+
+/* Feedback text pour les jeux */
+#feedback,
+#result,
+#story {
+  font-size: 18px;
+  color: #333;
+  margin-top: 20px;
+  line-height: 1.5;
+}
+
+/* Input pour le jeu de devinette */
+#guess {
+  padding: 8px;
+  width: 80%;
+  max-width: 300px;
+  margin: 15px auto;
+  border: 1px solid #4a90e2;
+  border-radius: 5px;
+}
+
+
+
+@media (min-width: 768px) {
+  .interests-section {
+    justify-content: space-around;
+  }
+
+  .card {
+    width: 400px;
+  }
+}
+
+.mini-games-menu {
+  background-color: #fff;
+  border-top: 4px solid #4a90e2;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px auto 40px;
+  max-width: 600px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.mini-games-menu h2 {
+  font-family: 'Space Mono', monospace;
+  color: #ff6f61; /* Couleur orange vive */
+  margin-bottom: 15px;
+}
+
+.mini-games-menu ul {
+  list-style: none;
+  padding: 0;
+}
+
+.mini-games-menu li {
+  margin: 10px 0;
+}
+
+.mini-games-menu a {
+  color: #4a90e2; /* Couleur principale bleue */
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.mini-games-menu a:hover {
+  color: #ff6f61; /* Couleur orange vive */
+  text-decoration: underline;
+}
+
+.mini-games-menu:hover {
+  transform: translateY(-5px);
+}
+
+#surpriseBtn {
+  background-color: #4a90e2;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  margin: 25px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Styles pour les petits écrans (mobiles, moins de 576px) */
+@media (max-width: 576px) {
+  body {
+    margin-top: 8rem;
+    font-size: 14px;
+  }
+
+  header h1 {
+    font-size: 24px;
+  }
+
+  header p {
+    font-size: 14px;
+  }
+
+  #profile-pic {
+    margin-top: 150px;
+    width: 120px;
+    height: 120px;
+  }
+
+  .bio {
+    font-size: 16px;
+    padding: 10px;
+    margin: 20px;
+  }
+
+  .card {
+    width: 90%;
+  }
+
+  .mini-games-menu {
+    width: 90%;
+  }
+
+  #surpriseBtn {
+    font-size: 16px;
+    padding: 8px 15px;
+  }
+
+  .game-container {
+    margin: 20px;
+  }
+}
+
+/* Styles pour les écrans moyens (tablettes, 576px à 768px) */
+@media (min-width: 576px) and (max-width: 768px) {
+  body {
+    margin-top: 10rem;
+    font-size: 15px;
+  }
+
+  header h1 {
+    font-size: 28px;
+  }
+
+  header p {
+    font-size: 17px;
+  }
+
+  #profile-pic {
+    margin-top: 50px;;
+    width: 130px;
+    height: 130px;
+  }
+
+  .bio {
+    font-size: 18px;
+    padding: 18px;
+  }
+
+  .card {
+    width: 80%;
+  }
+
+  .mini-games-menu {
+    width: 80%;
+  }
+
+  #surpriseBtn {
+    font-size: 17px;
+    padding: 9px 18px;
+  }
+}
+
+/* Styles pour les écrans larges (ordinateur de bureau, plus de 768px) */
+@media (min-width: 768px) and (max-width: 992px) {
+  .card {
+    width: 350px;
+  }
+
+  .mini-games-menu {
+    width: 600px;
+  }
+}
+
+/* Styles pour les très grands écrans (grands ordinateurs de bureau, plus de 1200px) */
+@media (min-width: 1200px) {
+  .interests-section {
+    justify-content: space-evenly;
+  }
+
+  .card {
+    width: 400px;
+  }
+
+  .bio {
+    max-width: 800px;
+  }
+
+  .mini-games-menu {
+    max-width: 700px;
+  }
+}
+
+/* Responsive styles pour les jeux */
+@media (max-width: 576px) {
+  .game-title {
+    font-size: 24px;
+  }
+
+  .game-instructions,
+  #feedback,
+  #result,
+  #story {
+    font-size: 16px;
+  }
+
+  #guess {
+    font-size: 14px;
+    padding: 6px;
+  }
+
+  .start-button {
+    font-size: 15px;
+    padding: 9px 18px;
+  }
+
+  .game-button {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+
+  #colorDisplay {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 768px) {
+  .game-title {
+    font-size: 28px;
+  }
+
+  .game-instructions,
+  #feedback,
+  #result,
+  #story {
+    font-size: 17px;
+  }
+
+  #guess {
+    font-size: 15px;
+    padding: 7px;
+  }
+
+  .start-button {
+    font-size: 15px;
+    padding: 9px 18px;
+  }
+
+  .game-button {
+    font-size: 15px;
+    padding: 9px 18px;
+  }
+
+  #colorDisplay {
+    width: 130px;
+    height: 130px;
+  }
+}

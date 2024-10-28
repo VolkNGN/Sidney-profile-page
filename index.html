@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sidney Nguyen - Développeur & Passionné</title>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&family=Space+Mono:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<header>
+  <h1>Bienvenue, je suis Sidney Nguyen ! 😎</h1>
+  <p>Développeur web | Passionné de jeux vidéo, photographie et de jeux de société</p>
+  <button id="surpriseBtn" onclick="showSurprise()">Cliquez pour une surprise !</button>
+  <p id="surpriseMessage"></p>
+
+<script>
+const messages = [
+  "🌟 Tu es incroyable ! 🌟",
+  "🎉 Continue comme ça ! 🎉",
+  "💻 Garde le code génial ! 💻",
+  "🌌 La créativité est sans fin ! 🌌",
+  "🎮 Prêt pour un jeu ? 🎮"
+];
+
+function showSurprise() {
+  const randomMessage = messages[Math.floor(Math.random() * messages.length)];
+  document.getElementById("surpriseMessage").textContent = randomMessage;
+}
+</script>
+
+</header>
+
+<body>
+
+
+  <section class="profile-section">
+    <img id="profile-pic" src="images/profil-sidney.webp" alt="Sidney Nguyen">
+    <div class="bio">
+      <p>Bonjour, je m'appelle Sidney Nguyen, j'ai 30 ans et je suis passionné par tout ce qui touche à l'informatique et à la création. Que ce soit à travers le développement web, l'univers des jeux vidéo, ou encore la photographie, je cherche toujours à apprendre et à repousser mes limites.</p>
+      <p>Quand je ne suis pas derrière mon ordinateur, j'aime organiser des soirées jeux de société avec mes amis.</p>
+    </div>
+  </section>
+
+  <section class="interests-section">
+    <div class="card">
+      <h2>Développement Web 💻</h2>
+      <p>
+        J'adore créer des applications web modernes et intuitives, avec une attention particulière au design et à l'expérience utilisateur.
+      </p>
+    </div>
+
+    <div class="card">
+      <h2>Jeux Vidéo 🎮</h2>
+      <p>
+        Fan inconditionnel de jeux vidéo, j'aime analyser les mécaniques de jeu, et même créer mes propres petits jeux pour le plaisir.
+      </p>
+    </div>
+
+    <div class="card">
+      <h2>Photographie 📸</h2>
+      <p>
+        La photographie me permet d'immortaliser les moments simples et beaux de la vie, que ce soit un paysage ou un portrait.
+      </p>
+    </div>
+  </section>
+
+  <nav class="mini-games-menu">
+    <h2>Minis-Jeux 🎲</h2>
+    <ul>
+      <li><a href="jeux/jeu1.html">Jeu de Mémorisation</a></li>
+      <li><a href="jeux/jeu2.html">Puzzle Logique</a></li>
+      <li><a href="jeux/jeu3.html">Mon petit rpg</a></li>
+    </ul>
+  </nav>
+
+  <footer>
+
+
+    <h3>Suivez-moi sur les réseaux 🌍</h3>
+    <ul>
+      <li><a href="https://linktr.ee/sidney_nguyen" target="_blank">Linktree</a></li>
+    </ul>
+
+  </footer>
+</body>
+</html>

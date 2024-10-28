@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jeu 1 : Jeu de Mémorisation</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <header>
+    <h1>Jeu de Mémorisation 🎨</h1>
+  </header>
+  <section class="game-container game-one">
+    <p class="game-instructions">Mémorisez la couleur affichée, puis essayez de la sélectionner parmi les options.</p>
+
+    <div id="colorDisplay" style="width: 150px; height: 150px; margin: 20px auto; background-color: white; border: 2px solid #4a90e2; border-radius: 10px;"></div>
+
+    <div id="choices" class="game-buttons"></div>
+
+    <button class="start-button" onclick="startGame()">Démarrer</button>
+
+    <p id="result"></p>
+  </section>
+
+  <footer>
+    <p><a href="../index.html">Retour au menu principal</a></p>
+  </footer>
+
+  <script>
+    let correctColor;
+    const colors = ["red", "blue", "green", "yellow", "purple", "orange"];
+
+    function startGame() {
+      correctColor = colors[Math.floor(Math.random() * colors.length)];
+      document.getElementById("colorDisplay").style.backgroundColor = correctColor;
+      document.getElementById("result").textContent = "";
+      setTimeout(() => {
+        document.getElementById("colorDisplay").style.backgroundColor = "white";
+        displayChoices();
+      }, 2000);
+    }
+
+    function displayChoices() {
+      const choicesDiv = document.getElementById("choices");
+      choicesDiv.innerHTML = "";
+      colors.forEach(color => {
+        const btn = document.createElement("button");
+        btn.textContent = color;
+        btn.style.backgroundColor = color;
+        btn.className = "game-button";
+        btn.onclick = () => checkAnswer(color);
+        choicesDiv.appendChild(btn);
+      });
+    }
+
+    function checkAnswer(color) {
+      const result = document.getElementById("result");
+      if (color === correctColor) {
+        result.textContent = "Bravo ! Bonne réponse !";
+      } else {
+        result.textContent = "Oups ! Mauvaise réponse.";
+      }
+    }
+  </script>
+</body>
+</html>

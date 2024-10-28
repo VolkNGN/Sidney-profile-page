@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jeu 2 : Puzzle Logique</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <header>
+    <h1>Puzzle Logique 🎲</h1>
+  </header>
+  <section class="game-container game-two">
+    <p class="game-instructions">Devinez le nombre entre 1 et 100.</p>
+
+    <input type="number" id="guess" min="1" max="100" placeholder="Votre estimation" style="padding: 8px; border-radius: 5px; border: 1px solid #4a90e2;">
+    <button class="game-button" onclick="checkGuess()">Vérifier</button>
+
+    <p id="feedback"></p>
+  </section>
+
+  <footer>
+    <p><a href="../index.html">Retour au menu principal</a></p>
+  </footer>
+
+  <script>
+    let numberToGuess = Math.floor(Math.random() * 100) + 1;
+    let attempts = 0;
+
+    function checkGuess() {
+      const userGuess = parseInt(document.getElementById("guess").value);
+      attempts++;
+      const feedback = document.getElementById("feedback");
+      if (userGuess === numberToGuess) {
+        feedback.textContent = `Bravo ! Vous avez trouvé en ${attempts} essais.`;
+        feedback.style.color = "green";
+      } else if (userGuess < numberToGuess) {
+        feedback.textContent = "Trop bas ! Essayez un nombre plus grand.";
+        feedback.style.color = "red";
+      } else {
+        feedback.textContent = "Trop haut ! Essayez un nombre plus petit.";
+        feedback.style.color = "red";
+      }
+    }
+  </script>
+</body>
+</html>

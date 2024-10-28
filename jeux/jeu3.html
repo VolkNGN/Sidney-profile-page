@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jeu 3 : Jeu d'Aventure Textuel</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <header>
+    <h1>Jeu d'Aventure Textuel 🏞️</h1>
+  </header>
+  <section class="game-container game-three">
+    <p class="game-instructions">Vous vous trouvez dans une forêt sombre. Que voulez-vous faire ?</p>
+
+    <div class="game-buttons">
+      <button class="game-button" onclick="explore()">Explorer</button>
+      <button class="game-button" onclick="camp()">Monter le camp</button>
+    </div>
+
+    <p id="story" class="story-output"></p>
+  </section>
+
+  <footer>
+    <p><a href="../index.html">Retour au menu principal</a></p>
+  </footer>
+
+  <script>
+    function explore() {
+      document.getElementById("story").innerHTML = "Vous trouvez une clairière avec des baies. Voulez-vous les manger, continuer ou suivre un sentier vers un bruit étrange ?<br>" +
+        '<button class="game-button" onclick="eat()">Manger les baies</button> ' +
+        '<button class="game-button" onclick="keepWalking()">Continuer</button> ' +
+        '<button class="game-button" onclick="followSound()">Suivre le bruit</button>';
+    }
+
+    function camp() {
+      document.getElementById("story").innerHTML = "Vous montez le camp pour la nuit. En plein sommeil, vous entendez un bruit étrange et vous voyez des ombres autour de vous...<br>" +
+        '<button class="game-button" onclick="investigate()">Enquêter sur le bruit</button> ' +
+        '<button class="game-button" onclick="hide()">Se cacher dans la tente</button>';
+    }
+
+    function eat() {
+      document.getElementById("story").textContent = "Les baies étaient empoisonnées ! Fin de l'aventure pour vous.";
+    }
+
+    function keepWalking() {
+      document.getElementById("story").innerHTML = "Vous découvrez une cabane abandonnée. Voulez-vous entrer ou continuer à marcher ?<br>" +
+        '<button class="game-button" onclick="enterCabin()">Entrer dans la cabane</button> ' +
+        '<button class="game-button" onclick="keepWalkingFurther()">Continuer à marcher</button>';
+    }
+
+    function followSound() {
+      document.getElementById("story").textContent = "Vous suivez le bruit et tombez sur un ours qui vous prend en chasse ! Fin tragique.";
+    }
+
+    function investigate() {
+      document.getElementById("story").textContent = "En enquêtant sur le bruit, vous tombez dans un piège de chasseurs. C'est la fin pour vous.";
+    }
+
+    function hide() {
+      document.getElementById("story").textContent = "Vous tentez de vous cacher, mais une ombre pénètre dans votre tente... Fin mystérieuse.";
+    }
+
+    function enterCabin() {
+      document.getElementById("story").innerHTML = "La cabane semble abandonnée. Soudain, vous entendez des pas derrière vous... Voulez-vous fuir ou vous cacher ?<br>" +
+        '<button class="game-button" onclick="runAway()">Fuir</button> ' +
+        '<button class="game-button" onclick="hideInCabin()">Se cacher dans la cabane</button>';
+    }
+
+    function keepWalkingFurther() {
+      document.getElementById("story").textContent = "Vous continuez votre chemin mais finissez par vous perdre. La nuit tombe, et sans équipement, vous ne survivez pas. Fin solitaire.";
+    }
+
+    function runAway() {
+      document.getElementById("story").textContent = "Vous fuyez, mais trébuchez sur une racine et tombez dans un ravin. Fin dramatique.";
+    }
+
+    function hideInCabin() {
+      document.getElementById("story").textContent = "Vous vous cachez dans un placard de la cabane. Les pas s'arrêtent juste devant. La peur vous paralyse. Fin mystérieuse.";
+    }
+  </script>
+</body>
+</html>
